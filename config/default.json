@@ -1,0 +1,4 @@
+{
+    "mongoURI":"mongodb+srv://goku2020:Goku@2020@devconnector.kwm5c.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "jwtSecret":"mysecrettoken"
+}
