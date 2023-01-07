@@ -18,7 +18,7 @@ router.post('/',[auth,[
         return res.status(400).json({errors:errors.array()});
     }
     try {
-        const user=await await User.findById(req.user.id).select('-password');
+        const user = await await User.findById(req.user.id).select('-password');
         const newPost= new Post({
             text: req.body.text,
             name:user.name,
@@ -203,7 +203,7 @@ router.delete('/comment/:id/:comment_id',auth,async (req,res) =>{
         //Get remove index
        const removeIndex=post.comments.map(comment => comment.user.toString().indexOf(req.user.id));
 
-       post.comments.splice(removeIndex,1);
+       post.comments.splice(removeIndex,1); //at position removeIndex remove 1 element 
 
        await post.save();
 
